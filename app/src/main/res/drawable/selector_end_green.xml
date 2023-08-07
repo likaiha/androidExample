@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 填充色 -->
+    <!--    <solid android:color="#F8A731" />-->
+        <solid android:color="#FFFFFF" />
+
+<!--    <gradient-->
+<!--        android:angle="0"-->
+<!--        android:startColor="#CCCCCC" />-->
+    <stroke
+        android:width="0.01dp"
+        android:color="#CCCCCC" />
+
+    <!-- 圆角半径要小于等于height的一半，大于按照等于一半效果展示-->
+    <corners android:radius="30dp" />
+</shape>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp_35"
+    android:layout_marginEnd="@dimen/dp_35"
+    android:background="@drawable/bg_round_5dp_theme_white">
+
+
+    <TextView
+        android:id="@+id/tv_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        android:text="确定退出登录？"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_17"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    android:lineSpacingExtra-->
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_FF4B4B4B"
+        app:layout_constraintTop_toBottomOf="@id/tv_note" />
+
+    <LinearLayout
+        android:id="@+id/layout_to_do"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/line">
+
+        <TextView
+            android:id="@+id/btn_exit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="取消"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_15" />
+
+        <View
+            android:layout_width="0.25dp"
+            android:layout_height="40dp"
+            android:background="@color/color_FF4B4B4B" />
+
+        <TextView
+            android:id="@+id/btn_enter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="确定"
+            android:textColor="#E82E39"
+            android:textSize="@dimen/sp_15" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+include ':app'
+rootProject.name = "AIChat"
+include ':baseokhttp_v3'
+include ':library'
+include ':easypay'
+include ':alipay'

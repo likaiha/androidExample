@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 填充色 -->
+<!--    <solid android:color="#F8A731" />-->
+<!--    <solid android:color="#F0795C" />-->
+
+    <gradient
+        android:angle="0"
+        android:startColor="#F8A731"
+        android:endColor="#F0795C"/>
+
+    <!-- 此处宽高设置无效，只是在此用于展示，实际到布局文件设置的width和height有效 -->
+    <size
+        android:width="200dp"
+        android:height="60dp" />
+
+    <!-- 圆角半径要小于等于height的一半，大于按照等于一半效果展示-->
+    <corners android:radius="30dp" />
+</shape>

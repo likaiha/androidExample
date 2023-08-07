@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.home.activity.AIChatActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_666666"
+        app:leftIcon="@mipmap/iv_left"
+        app:title="客服中心"
+        app:titleColor="@color/white"
+        app:titleSize="@dimen/sp_18" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/normal_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleY="-1"
+        app:srlEnableAutoLoadMore="false"
+        app:srlEnableNestedScrolling="false"
+        app:srlEnableRefresh="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:fadeScrollbars="false"
+            android:overScrollMode="never"
+            android:scaleY="-1"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="1" />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleY="-1"
+            app:srlTextPulling="下拉加载更多" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/color_666666"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/etMsg"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_35"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="@drawable/bg_round_50dp_ff8e32"
+            android:hint="请用一句话描述你的问题"
+            android:lines="1"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
+            android:textColor="@color/white" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ivAddImg"-->
+<!--            android:layout_width="@dimen/dp_28"-->
+<!--            android:layout_height="@dimen/dp_28"-->
+<!--            android:layout_margin="@dimen/dp_10"-->
+<!--            android:src="@mipmap/iv_add_img" />-->
+
+        <TextView
+            android:id="@+id/tvSendMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/bg_round_5dp_theme_efef"
+            android:paddingStart="@dimen/dp_12"
+            android:paddingTop="@dimen/dp_6"
+            android:paddingEnd="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_6"
+            android:text="发送"
+            android:textColor="@color/color_666666" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

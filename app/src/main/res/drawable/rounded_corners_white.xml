@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 填充色 -->
+        <solid android:color="#FFFFFF" />
+    <!--    <solid android:color="#F0795C" />-->
+
+    <!-- 圆角半径要小于等于height的一半，大于按照等于一半效果展示-->
+    <corners android:radius="@dimen/dp_15" />
+</shape>

@@ -1,0 +1,166 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file('aichat.jks')
+            storePassword 'demo1234'
+            keyPassword 'demo1234'
+            keyAlias 'keys'
+        }
+        release {
+            storeFile file('aichat.jks')
+            storePassword 'demo1234'
+            keyPassword 'demo1234'
+            keyAlias 'keys'
+        }
+    }
+
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.hzbk.aichat"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 104
+        versionName "1.0.4"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 打包上线时也用正式签名
+            signingConfig signingConfigs.release
+        }
+    }
+
+    //签名打包自动命名
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def date = new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08"))
+            if (variant.buildType.name == 'debug') {
+                outputFileName = "AI" + "_${date}_${versionName}_d.apk"
+            }
+            if (variant.buildType.name == 'release') {
+                outputFileName = "AI" + "_${date}_${versionName}_r.apk"
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    //加快gradle的编译速度
+    dexOptions {
+        preDexLibraries true
+        javaMaxHeapSize "4g"
+        dexInProcess = true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation project(path: ':library')
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    // 动画解析库：https://github.com/airbnb/lottie-android
+    // 动画资源：https://lottiefiles.com、https://icons8.com/animated-icons
+    implementation 'com.airbnb.android:lottie:4.1.0'
+
+
+    // 吐司框架：https://github.com/getActivity/ToastUtils
+    implementation 'com.github.getActivity:ToastUtils:9.5'
+    implementation 'com.github.getActivity:TitleBar:9.2'
+
+    // 图片加载框架：https://github.com/bumptech/glide
+    // 官方使用文档：https://github.com/Muyangmin/glide-docs-cn
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+
+    // 沉浸式框架：https://github.com/gyf-dev/ImmersionBar
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+    // 指示器框架：https://github.com/ongakuer/CircleIndicator
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    // Json 解析框架：https://github.com/google/gson
+    implementation 'com.google.code.gson:gson:2.8.8'
+    // Gson 解析容错：https://github.com/getActivity/GsonFactory
+    implementation 'com.github.getActivity:GsonFactory:5.2'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+    implementation 'com.github.getActivity:ShapeView:6.2'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
+    //autoSize
+    implementation 'me.jessyan:autosize:1.2.1'
+    implementation 'com.github.ai2101039:YLCircleImageView:v1.0.8'
+    implementation 'io.github.lucksiege:pictureselector:v2.7.3-rc06'
+
+    // 上拉刷新下拉加载：https://github.com/scwang90/SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    // SmartRefreshLayout 刷新样式集合库
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'
+
+    implementation 'com.github.iwgang:countdownview:2.1.6'
+    //BaseOkHttp V3 网络请求库 https://github.com/kongzue/BaseOkHttpV3
+    implementation project(':baseokhttp_v3')
+    //BaseJson 解析库
+    implementation 'com.github.kongzue:BaseJson:1.0.7.2'
+
+    //请求框架  https://github.com/zhou-you/RxEasyHttp
+    implementation 'com.zhouyou:rxeasyhttp:2.1.5'
+    implementation 'com.android.support:multidex:1.0.3'
+
+    // 权限请求框架：https://github.com/getActivity/XXPermissions
+    implementation 'com.github.getActivity:XXPermissions:13.2'
+    //eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.gongwen:marqueelibrary:1.1.3'
+    implementation 'com.github.xuexiangjys:XUpdate:2.1.3'
+    implementation 'com.github.chaychan:BottomBarLayout:2.0.2'
+    implementation 'com.github.li-xiaojun:XPopup:2.9.4'
+    implementation 'com.github.ywp0919:AddressPickerLib:1.0.1'
+
+    implementation 'com.github.jenly1314.AppUpdater:app-updater:1.1.3'
+    //app-dialog
+    implementation 'com.github.jenly1314.AppUpdater:app-dialog:1.1.3'
+    implementation 'com.kyle.nestedradiogrouplib:radiogrouplib:1.0.1'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation 'com.zhy:flowlayout-lib:1.0.3'
+    implementation 'com.google.zxing:core:3.3.0'
+    //JSON解析
+    implementation 'com.alibaba:fastjson:1.2.54'
+    //工具类
+    implementation 'com.github.xuexiangjys.XUtil:xutil-core:2.0.0'
+    implementation 'cc.taylorzhang:single-click:1.1.0'
+    implementation 'com.github.OCNYang:CartLayout:v1.0.1'
+    api 'com.alipay.sdk:alipaysdk-android:+@aar'
+    implementation 'com.xgr.easypay:EasyPay:2.0.5'   // 基类库，必选
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    //retrofit添加Json解析返回数据
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+    //Rxjava
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.1'
+}

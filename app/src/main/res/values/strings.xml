@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">ATdemo</string>
+
+
+    <string name="common_loading">加载中&#8230;</string>
+
+    <string name="text_login">登录</string>
+    <string name="action_settings">Settings</string>
+    <string name="selector_title">请选择所在地区</string>
+    <string name="selector_text_default">请选择</string>
+    <!-- 首页 -->
+    <string name="home_exit_hint">再按一次退出</string>
+    <!--    <string name="home_exit_hint">Press again to exit</string>-->
+    <!--    <string name="home_nav_index">首页</string>-->
+    <string name="home_nav_index">首页</string>
+    <string name="home_nav_found">一键开团</string>
+    <string name="home_nav_cart">购物车</string>
+    <string name="home_nav_me">我的</string>
+    <string name="order_dsettle">确认订单</string>
+    <string name="address_hint">请选择</string>
+    <string name="http_unknown_error">请求出错，未知错误</string>
+    <string name="http_token_error">登录失效，请重新登录</string>
+    <string name="http_data_explain_error">数据解析异常，请稍后</string>
+    <string name="http_server_out_time">服务器请求超时，请稍后再试</string>
+    <string name="http_network_error">请求失败，请检查网络设置</string>
+    <string name="http_response_error">服务器响应异常，请稍后再试</string>
+    <string name="http_server_error">服务器连接异常，请稍后再试</string>
+    <string name="http_request_cancel">请求被中断，请重试</string>
+    <string name="bind_yhang">绑定银行卡</string>
+
+    <string name="rmb_X">¥&#160;%1$.2f</string>
+    <string name="cart">购物车(%1$d)</string>
+    <string name="all_select">全选</string>
+    <string name="edit_done">取消编辑</string>
+    <string name="go_settle_X">去结算(%1$d)</string>
+    <string name="go_settle">去结算</string>
+    <string name="delete_X">删除(%1$d)</string>
+    <string name="total_">合计：</string>
+    <string name="edit">编辑</string>
+    <string name="normal_tip_X">购物车中有 %1$d 件商品已经降价，快去看看</string>
+    <string name="common_year">年</string>
+    <string name="common_month">月</string>
+    <string name="common_day">日</string>
+    <!-- 时间对话框 -->
+    <string name="time_title">请选择时间</string>
+    <string name="common_confirm">确定</string>
+    <string name="common_cancel">取消</string>
+    <!-- 日期对话框 -->
+    <string name="date_title">请选择日期</string>
+
+
+    <string name="loading_tips">正在加载…</string>
+    <string name="empty_tips">空空如也╮(╯▽╰)╭</string>
+    <string name="empty_tips1">没有相关记录</string>
+    <string name="empty_order">您还没有下过单哦~</string>
+    <string name="empty_order_search">没有搜到相关订单~</string>
+    <string name="error_refresh">重新加载</string>
+    <string name="get_pic_fail">图片获取失败</string>
+    <string name="error_unknown">未知错误</string>
+    <string name="no_camera_permission">没有获取到权限，无法使用相机和相册功能</string>
+
+
+</resources>
